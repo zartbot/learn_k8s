@@ -62,4 +62,14 @@ token:
 
 ```
 
+```
+alias ktoken="kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')"
+```
+
+```bash
+[root@k8s-master01 ~]# kubectl get lease -n kube-system
+NAME                      HOLDER                                              AGE
+kube-controller-manager   k8s-master01_fe6ea9d7-726a-4013-adbf-0c14f52bc37b   42h
+kube-scheduler            k8s-master01_da64d5a8-7e7c-4e5f-9b0e-03352403fdf1   42h
+```
 
